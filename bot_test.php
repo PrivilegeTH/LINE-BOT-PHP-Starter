@@ -8,13 +8,8 @@ $events = json_decode($content, true);
 if (!is_null($events['events'])) {							
 foreach ($events['events'] as $event) {							
 							
-	if (($event['type'] == 'message' && strtolower(preg_replace("/[^A-Za-z0-9]/", "", $event['message']['text'])) ==  'coal') ||				
-	($event['type'] == 'message' && strtolower(preg_replace("/[^A-Za-z0-9]/", "", $event['message']['text'])) ==  'coalprice') ||				
-	($event['type'] == 'message' && strtolower(preg_replace("/[^A-Za-z0-9]/", "", $event['message']['text'])) ==  'newcastleprice') ||				
-	($event['type'] == 'message' && strtolower(preg_replace("/[^A-Za-z0-9]/", "", $event['message']['text'])) == 'newcastle')				
-	) {						
-	$text =	'Newcastle coal	 84.03 	USD/ton	0.18%	changed from yesterday'	
-	; }	
+	if (($event['type'] == 'message' && strtolower(preg_replace("/[^A-Za-z0-9]/", "", $event['message']['text'])) ==  'hi')) 
+        {$text ='wassup?'; }	
 
 	else if (($event['type'] == 'message' && strtolower(preg_replace("/[^A-Za-z0-9]/", "", $event['message']['text'])) ==	'rb'	) ||				
 	($event['type'] == 'message' && strtolower(preg_replace("/[^A-Za-z0-9]/", "", $event['message']['text'])) == 	'richardsbay'	) ||				
