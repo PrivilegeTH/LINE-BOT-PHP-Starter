@@ -8,8 +8,9 @@ $events = json_decode($content, true);
 if (!is_null($events['events'])) {							
 foreach ($events['events'] as $event) {							
 							
-	if (($event['type'] == 'message' && strtolower(preg_replace("/[^A-Za-z0-9]/", "", $event['message']['text'])) ==  'hi')) 
-        {$text ='wassup?'; }	
+	if (($event['type'] == 'message' && strtolower(preg_replace("/[^A-Za-z0-9]/", "", $event['message']['text'])) ==  'hi') ||				
+	($event['type'] == 'message' && strtolower(preg_replace("/[^A-Za-z0-9]/", "", $event['message']['text'])) == 	'hello'	)) 
+        {$text ='What can I help you?'; }	
 
 	else if (($event['type'] == 'message' && strtolower(preg_replace("/[^A-Za-z0-9]/", "", $event['message']['text'])) ==	'rb'	) ||				
 	($event['type'] == 'message' && strtolower(preg_replace("/[^A-Za-z0-9]/", "", $event['message']['text'])) == 	'richardsbay'	) ||				
@@ -20,8 +21,7 @@ foreach ($events['events'] as $event) {
 	; }						
 			
 	else {				
-	$text =	"Sorry, I'm not sure what you are asking, could you try something else?			
-		Or try 'List' to see the example of keywords"			
+	$text =	"Sorry please try another key word such as Hello"			
 	; }
 
 
